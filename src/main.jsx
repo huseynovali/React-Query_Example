@@ -4,7 +4,7 @@ import App from './App.jsx';
 import { BrowserRouter } from 'react-router-dom';
 import { UserProvider } from './Context/UserContext.jsx';
 import { PostProvider } from './Context/PostContext.jsx';
-
+import "./index.css"
 ReactDOM.createRoot(document.getElementById('root')).render(
   <UserProvider>
     <PostProvider>
