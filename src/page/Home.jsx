@@ -1,12 +1,17 @@
-import React, { useContext } from 'react'
-import { CommonContext } from '../Context/CommonContext'
+import React, { useContext, useEffect } from 'react'
+import { UserContext } from '../Context/UserContext'
 
 function Home() {
-    const user = useContext(CommonContext);
+    const {user,getUser,getUserById} = useContext(UserContext);
+ useEffect(()=>{
+   getUser();
+   getUserById(2)
+ },[])
+
 
   return (
-    <div>{user}
-   { console.log(user)}
+    <div>
+
     
     </div>
   )

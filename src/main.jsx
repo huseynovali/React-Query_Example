@@ -2,12 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx';
 import { BrowserRouter } from 'react-router-dom';
-import { CommonProvider } from './Context/CommonContext.jsx';
+import { UserProvider } from './Context/UserContext.jsx';
+import { PostProvider } from './Context/PostContext.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <CommonProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </CommonProvider>
+  <UserProvider>
+    <PostProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </PostProvider>
+  </UserProvider>
 );
