@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { CommonContext } from '../Context/CommonContext'
 
 function Home() {
+    const user = useContext(CommonContext);
+
   return (
-    <div>Home</div>
+    <div>{user}
+   { console.log(user)}
+    
+    </div>
   )
 }
 
