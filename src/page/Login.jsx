@@ -46,6 +46,11 @@ function Login() {
 
   return (
     <div>
+      <div className="w-full bg-slate-400">
+        <div className="container m-auto  text-white py-3 flex justify-between">
+          <Link to='/' className='px-3 py-2' >Home</Link>
+        </div>
+      </div>
       <ToastContainer
         position="top-right"
         autoClose={2000}

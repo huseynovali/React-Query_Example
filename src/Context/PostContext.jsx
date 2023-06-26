@@ -8,7 +8,7 @@ const PostContext = createContext();
 const PostProvider = ({ children }) => {
   const getPost = async () => {
     let res = await axios.get("http://localhost:3000/posts")
-    console.log(res);
+    return res
   }
   const getPostsByUserId = async (userId) => {
     let res = await axios.get(`http://localhost:3000/posts?userId=${userId}`)

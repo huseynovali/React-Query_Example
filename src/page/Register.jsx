@@ -64,6 +64,11 @@ function Register() {
         pauseOnHover
         theme="light"
       />
+      <div className="w-full bg-slate-400">
+        <div className="container m-auto  text-white py-3 flex justify-between">
+          <Link to='/' className='px-3 py-2' >Home</Link>
+        </div>
+      </div>
       <div className="w-[45%] m-auto bg-slate-300 mt-[5%] rounded-lg">
         <h1 className="text-3xl text-center py-3">Register</h1>
         <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
