@@ -26,6 +26,7 @@ function Login() {
       queryClient.invalidateQueries('users');
       toast.success("Login !");
       localStorage.setItem("token", JSON.stringify(data.email + uuidv4()))
+      localStorage.setItem("userid", JSON.stringify(data.id))
       navigate("/")
     },
     onError: (error) => {
