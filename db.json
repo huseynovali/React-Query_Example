@@ -6,14 +6,48 @@
       "author": "typicode"
     }
   ],
-  "comments": [
+  "users": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "Ali",
+      "email": "huseynovali612@gmail.com",
+      "password": "Ali20031001a",
+      "id": 1
+    },
+    {
+      "name": "Ali",
+      "email": "huseyinovali612@gmail.com",
+      "password": "ali123123",
+      "id": 2
+    },
+    {
+      "name": "Ali",
+      "email": "huseyinovali612@gmail.com",
+      "password": "ali123555555",
+      "id": 3
+    },
+    {
+      "name": "Ali",
+      "email": "huseyinovali612@gmail.com",
+      "password": "a55555555555555",
+      "id": 4
+    },
+    {
+      "name": "Ali",
+      "email": "huseyinovali612@gmail.com",
+      "password": "a455555555555555555",
+      "id": 5
+    },
+    {
+      "name": "Ali",
+      "email": "huseyinovali612@gmail.com",
+      "password": "ali123555555555",
+      "id": 6
+    },
+    {
+      "name": "asd",
+      "email": "huseyinovali612@gmail.com",
+      "password": "12345678",
+      "id": 7
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

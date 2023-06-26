@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../Context/UserContext';
+import { QueryClient, useMutation, useQueryClient } from 'react-query';
 
 function Register() {
+  const { AddUser } = useContext(UserContext);
+  const queryClient = useQueryClient();
   const initialValues = {
-    name: "",
+    name: '',
     email: '',
     password: ''
   };
-
 
   const validationSchema = Yup.object({
     name: Yup.string().required('Name is required'),
@@ -17,18 +20,29 @@ function Register() {
     password: Yup.string().required('Password is required').min(8)
   });
 
-  const handleSubmit = (values, { setSubmitting, resetForm }) => {
-    setTimeout(() => {
-      console.log(values);
-      setSubmitting(false);
-      resetForm();
-    }, 500);
+  const createUserMutation = useMutation(AddUser, {
+    onSuccess: () => {
+      queryClient.invalidateQueries('users');
+    },
+  });
+
+
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    try {
+      let res = await createUserMutation.mutateAsync(values);
+      console.log('User created successfully', res);
+    } catch (error) {
+      console.error('Failed to create user:', error);
+    }
+    setSubmitting(false);
+    resetForm();
   };
+
 
   return (
     <div>
-      <div className=" w-[45%]  m-auto bg-slate-300 mt-[5%] rounded-lg">
-        <h1 className='text-3xl text-center py-3'>Register</h1>
+      <div className="w-[45%] m-auto bg-slate-300 mt-[5%] rounded-lg">
+        <h1 className="text-3xl text-center py-3">Register</h1>
         <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
           <Form className="p-10">
             <div className="input__group flex flex-col">
@@ -47,17 +61,16 @@ function Register() {
               <ErrorMessage name="password" component="div" className="text-red-500" />
             </div>
             <button type="submit" className="px-5 py-2 bg-slate-500 text-white rounded-md mt-2">
-              Login
+              Register
             </button>
             <Link to="/login" className="text-red-500 block m-3">
               Login
             </Link>
           </Form>
         </Formik>
-
       </div>
     </div>
-  )
+  );
 }
 
-export default Register
+export default Register;

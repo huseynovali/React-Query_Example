@@ -6,25 +6,24 @@ import React, { createContext, useState } from "react";
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
-  const [user, setUser] = useState("salam");
 
   const getUser = async () => {
     let res = await axios.get("http://localhost:3000/users")
-    console.log(res);
+    return res
   }
 
   const getUserById = async (id) => {
     let res = await axios.get(`http://localhost:3000/users/${id}`)
-    console.log(res);
+    return res
 
   }
   const deleteUserById = async (id) => {
     let res = await axios.delete(`http://localhost:3000/users/${id}`)
-    console.log(res);
+    return res
   }
-  const AddUser = async (id) => {
-    let res = await axios.post(`http://localhost:3000/users/`)
-    console.log(res);
+  const AddUser = async (value) => {
+    let res = await axios.post(`http://localhost:3000/users/`, value)
+    return res
   }
 
   const exportData = {
