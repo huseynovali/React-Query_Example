@@ -26,6 +26,7 @@ function NavLayout() {
                     setIsAuthenticated(false)
                     localStorage.clear();
                     <Navigate to='/' />
+                    window.location.reload()
                   }}>Logout</button>
                 </>
                 :
