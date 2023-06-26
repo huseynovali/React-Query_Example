@@ -1,17 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { Link } from 'react-router-dom';
+import { Link, json, useNavigate } from 'react-router-dom';
 import { UserContext } from '../Context/UserContext';
 import { QueryClient, useMutation, useQueryClient } from 'react-query';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { v4 as uuidv4 } from 'uuid';
 function Register() {
   const { AddUser } = useContext(UserContext);
+  const navigate = useNavigate()
   const queryClient = useQueryClient();
   const initialValues = {
     name: '',
     email: '',
-    password: ''
+    password: '',
+    id: uuidv4()
   };
 
   const validationSchema = Yup.object({
@@ -23,24 +27,40 @@ function Register() {
   const createUserMutation = useMutation(AddUser, {
     onSuccess: () => {
       queryClient.invalidateQueries('users');
+      toast.success("Create User !");
+      navigate("/login")
+    },
+    onError: (error) => {
+      toast.error('Error :' + error.message);
     },
   });
 
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
-      let res = await createUserMutation.mutateAsync(values);
-      console.log('User created successfully', res);
+      await createUserMutation.mutateAsync(values);
+      resetForm();
     } catch (error) {
       console.error('Failed to create user:', error);
     }
     setSubmitting(false);
-    resetForm();
   };
 
 
   return (
     <div>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <div className="w-[45%] m-auto bg-slate-300 mt-[5%] rounded-lg">
         <h1 className="text-3xl text-center py-3">Register</h1>
         <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>

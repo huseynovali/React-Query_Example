@@ -9,45 +9,15 @@
   "users": [
     {
       "name": "Ali",
-      "email": "huseynovali612@gmail.com",
-      "password": "Ali20031001a",
-      "id": 1
+      "email": "huseyinovali612@gmail.com",
+      "password": "ali1232222222222222",
+      "id": "0cfbf2b9-415a-4caa-8b91-c60b2d9d41ba"
     },
     {
       "name": "Ali",
       "email": "huseyinovali612@gmail.com",
-      "password": "ali123123",
-      "id": 2
-    },
-    {
-      "name": "Ali",
-      "email": "huseyinovali612@gmail.com",
-      "password": "ali123555555",
-      "id": 3
-    },
-    {
-      "name": "Ali",
-      "email": "huseyinovali612@gmail.com",
-      "password": "a55555555555555",
-      "id": 4
-    },
-    {
-      "name": "Ali",
-      "email": "huseyinovali612@gmail.com",
-      "password": "a455555555555555555",
-      "id": 5
-    },
-    {
-      "name": "Ali",
-      "email": "huseyinovali612@gmail.com",
-      "password": "ali123555555555",
-      "id": 6
-    },
-    {
-      "name": "asd",
-      "email": "huseyinovali612@gmail.com",
-      "password": "12345678",
-      "id": 7
+      "password": "ali12322222222222222",
+      "id": "a7cbfcbd-a96a-477e-b702-41cb48e68ad5"
     }
   ]
 }

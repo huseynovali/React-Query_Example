@@ -27,7 +27,6 @@ const UserProvider = ({ children }) => {
   }
 
   const exportData = {
-    user,
     getUser,
     getUserById,
     deleteUserById,
