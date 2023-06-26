@@ -38,8 +38,11 @@ function Register() {
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
+
       await createUserMutation.mutateAsync(values);
       resetForm();
+
+
     } catch (error) {
       console.error('Failed to create user:', error);
     }

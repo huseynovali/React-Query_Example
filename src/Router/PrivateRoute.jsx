@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Navigate } from 'react-router-dom';
 
 function PrivateRoute({ children }) {
-  const isAuthenticated = localStorage.getItem("token");
+  const isAuthenticated = JSON.parse(localStorage.getItem("token"));
+   
 
-  return (<>
+
+
+
+  return (
+  <>
     {
       isAuthenticated ?
         children :

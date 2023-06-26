@@ -11,7 +11,15 @@ const UserProvider = ({ children }) => {
     let res = await axios.get("http://localhost:3000/users")
     return res
   }
-
+  const login = async ({ email, password }) => {
+    let res = await axios.get("http://localhost:3000/users")
+    let user = res.data.find(item => item.email == email && item.password == password);
+    if (user) {
+      return user
+    } else {
+      throw new Error('Email or password is incorrect');
+    }
+  }
   const getUserById = async (id) => {
     let res = await axios.get(`http://localhost:3000/users/${id}`)
     return res
@@ -30,7 +38,8 @@ const UserProvider = ({ children }) => {
     getUser,
     getUserById,
     deleteUserById,
-    AddUser
+    AddUser,
+    login
   }
 
   return (

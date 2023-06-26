@@ -13,11 +13,9 @@ function MainRoute() {
             <Route path="/" element={<NavLayout />} >
                 <Route index element={<Home />} />
                 <Route path="/admin" element={<PrivateRoute><AdminPage /></PrivateRoute>} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-
             </Route>
-
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
         </Routes>
     );
 }

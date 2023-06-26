@@ -5,7 +5,7 @@ function Home() {
     const {user,getUser,getUserById} = useContext(UserContext);
  useEffect(()=>{
    getUser();
-   getUserById(2)
+
  },[])
 
 
