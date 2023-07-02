@@ -34,13 +34,9 @@ function Login() {
     },
   });
 
-  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
-    try {
-      await createUserMutation.mutateAsync(values);
-      resetForm();
-    } catch (error) {
-      console.error('Failed to create user:', error);
-    }
+  const handleSubmit = (values, { setSubmitting, resetForm }) => {
+    createUserMutation.mutate(values);
+    resetForm();
     setSubmitting(false);
   };
 

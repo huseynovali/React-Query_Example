@@ -1,10 +1,52 @@
 {
   "users": [
-    { "id": 1, "name": "John Doe" },
-    { "id": 2, "name": "Jane Smith" }
+    {
+      "id": 1,
+      "name": "John Doe"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith"
+    },
+    {
+      "name": "Ali",
+      "email": "huseynovali612@gmail.com",
+      "password": "Ali20031001a",
+      "id": "72994f87-5f08-4587-a459-864a810c90fa"
+    },
+    {
+      "name": "Laurel Gray",
+      "email": "buxac@mailinator.com",
+      "password": "Pa$$w0rd!",
+      "id": "485b48df-beff-40e0-bdd7-b93de55a2335"
+    }
   ],
   "posts": [
-    { "id": 1, "title": "First Post", "body": "Lorem ipsum dolor sit amet." },
-    { "id": 2, "title": "Second Post", "body": "Consectetur adipiscing elit." }
+    {
+      "id": 1,
+      "title": "First Post",
+      "body": "Lorem ipsum dolor sit amet."
+    },
+    {
+      "id": 2,
+      "title": "Second Post",
+      "body": "Consectetur adipiscing elit."
+    },
+    {
+      "title": "Fuga Provident pra",
+      "description": "Velit autem rem temp",
+      "tag": "Delectus,ad,quis,do",
+      "id": "7cdd595e-2d1e-4794-a114-f6a5cd3d1502",
+      "userId": "72994f87-5f08-4587-a459-864a810c90fa",
+      "author": "Ali"
+    },
+    {
+      "title": "Consequat Incidunt",
+      "description": "Nisi dolorum odit no",
+      "tag": "Alias voluptatem mag",
+      "id": "23fff93d-5ba5-4a00-b9b5-c16174849e29",
+      "userId": "72994f87-5f08-4587-a459-864a810c90fa",
+      "author": "Ali"
+    }
   ]
 }
