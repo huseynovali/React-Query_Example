@@ -15,7 +15,7 @@ function CreatePost({ author }) {
         title: '',
         description: '',
         tag: '',
-        id: uuidv4(),
+        id:"",
         userId,
         author
     }
@@ -38,7 +38,7 @@ function CreatePost({ author }) {
 
     const handleSubmit = async (values, { setSubmitting, resetForm }) => {
         try {
-            await createPostMutation.mutateAsync(values);
+            await createPostMutation.mutateAsync({...values,id: uuidv4()});
             resetForm();
         } catch (error) {
             console.error('Failed to create post:', error);

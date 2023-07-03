@@ -1,35 +1,9 @@
 {
   "posts": [
-    {
-      "title": "Laborum Ut tempor c",
-      "description": "Dolor aut aspernatur",
-      "tag": "Perspiciatis consec",
-      "id": "f41e1039-d1e8-488b-a457-89f084a6ae96",
-      "userId": "d761ac34-7023-454f-a6f3-a4864abf48b6",
-      "author": "Ali"
-    },
-    {
-      "title": "Perferendis in elit",
-      "description": "Repellendus Quisqua",
-      "tag": "Reprehenderit minima",
-      "id": "a326c4bc-49d7-4e44-8be4-f024bb2fbabe",
-      "userId": "d761ac34-7023-454f-a6f3-a4864abf48b6",
-      "author": "Ali"
-    }
+
   
   ],
   "users": [
-    {
-      "name": "Ali",
-      "email": "huseynovali612@gmail.com",
-      "password": "Ali20031001a",
-      "id": "d761ac34-7023-454f-a6f3-a4864abf48b6"
-    },
-    {
-      "name": "Laurel Gray",
-      "email": "buxac@mailinator.com",
-      "password": "Pa$$w0rd!",
-      "id": "485b48df-beff-40e0-bdd7-b93de55a2335"
-    }
+
   ]
 }

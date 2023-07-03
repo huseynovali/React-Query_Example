@@ -7,6 +7,7 @@ import { UserContext } from '../Context/UserContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { v4 as uuidv4 } from 'uuid';
+import ErrorPage from './ErrorPage';
 function Login() {
   const { login } = useContext(UserContext);
   const navigate = useNavigate()
@@ -59,6 +60,8 @@ function Login() {
         pauseOnHover
         theme="light"
       />
+     <ErrorPage/>
+
       <div className="w-[45%] m-auto bg-slate-300 mt-[5%] rounded-lg">
         <h1 className="text-3xl text-center py-3">Login</h1>
         <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>

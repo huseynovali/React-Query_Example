@@ -50,11 +50,11 @@ function PostList() {
 
 
                             return (
-                                <div className=" card border p-2 relative min-h-[250px]">
+                                <div className=" card border p-2 relative min-h-[300px]" key={item.id}>
                                     <h1 className='text-xl font-medium mb-2'>{item.title}</h1>
                                     <p className='text-lg  mb-2'>{item.description?.length > 100 ? (item.description.substr(0, 120) + " ...") : item.description}</p>
                                     <p className='text-lg  mb-2'>Author : {item.author}</p>
-                                    <span className='text-blue-500 cursor-pointer'>{tags}</span>
+                                    <p className='text-blue-500 cursor-pointer '>{tags}</p>
                                     <div className="card__buttons absolute bottom-3">
                                         <button onClick={() => deletePost(item.id)} className='px-3 py-2 bg-red-400 rounded-md text-white mr-2'>Delete</button>
                                     </div>
